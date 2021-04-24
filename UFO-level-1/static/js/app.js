@@ -27,7 +27,7 @@ function filterDate(){
 
 }
 
-// This funtions creates & modifies the table
+// This funtion creates & modifies the table
 function tableHandler(sighting){
     let row = tbody.append("tr");
     Object.entries(sighting).forEach(function ([key, value]) {
@@ -42,8 +42,8 @@ tableData.forEach(tableHandler);
 // Event listener for the "Filter Table" button & click enter on form
 d3.select("#filter-btn").on("click", filterDate);
 
-// d3.select("#datetime").on("keypress", function(event){
-//     if (event.keyCode === 13){
-//         filterDate;
-//     }
-// });
+d3.select("#datetime").on("keypress", function(){
+    if (d3.event.keyCode === 13){
+        filterDate();
+    }
+});
